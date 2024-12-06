@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalender 2025 met Firebase</title>
-    <style>
-        body {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalender Chatje (v0.1)</title>
+  <style>
+    body {
             font-family: Arial, sans-serif;
             margin: 20px;
             text-align: center;
@@ -73,18 +74,18 @@
             margin-top: 10px;
         }
     </style>
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
         import { getDatabase, ref, push, get, child } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
         const firebaseConfig = {
-            apiKey: "AIzaSyCYbyAyNdnnIpcVwj5Q-y-Ah-c4HGXaJRs",
-            authDomain: "chatje-kalender.firebaseapp.com",
-            databaseURL: "https://chatje-kalender-default-rtdb.firebaseio.com",
-            projectId: "chatje-kalender",
-            storageBucket: "chatje-kalender.firebasestorage.app",
-            messagingSenderId: "363332888889",
-            appId: "1:363332888889:web:9949d6936f7399b81d20e8"
+          apiKey: "AIzaSyCYbyAyNdnnIpcVwj5Q-y-Ah-c4HGXaJRs",
+          authDomain: "chatje-kalender.firebaseapp.com",
+          databaseURL: "https://chatje-kalender-default-rtdb.firebaseio.com",
+          projectId: "chatje-kalender",
+          storageBucket: "chatje-kalender.firebasestorage.app",
+          messagingSenderId: "363332888889",
+          appId: "1:363332888889:web:9949d6936f7399b81d20e8"
         };
 
         const app = initializeApp(firebaseConfig);
@@ -283,29 +284,31 @@
         });
     </script>
 </head>
+
 <body>
-<h1>Kalender 2025 met Firebase</h1>
-<div class="month-navigation">
+  <h1>Kalender Chatje (v0.1)</h1>
+  <div class="month-navigation">
     <button id="prevMonth">Vorige</button>
     <span id="currentMonthYear"></span>
     <button id="nextMonth">Volgende</button>
-</div>
-<div id="calendarContainer"></div>
-<div id="overlay"></div>
-<div id="eventModal" class="modal">
+  </div>
+  <div id="calendarContainer"></div>
+  <div id="overlay"></div>
+  <div id="eventModal" class="modal">
     <h3>Voeg een agenda-item toe</h3>
     <label for="eventTitle">Titel:</label>
     <input type="text" id="eventTitle" placeholder="Agenda-item"><br><br>
     <label for="eventEmail">E-mailadres:</label>
     <input type="email" id="eventEmail" placeholder="Jouw e-mailadres"><br><br>
     <label>
-        <input type="checkbox" id="recurringCheckbox"> Jaarlijks terugkerend (bijvoorbeeld een verjaardag)
+      <input type="checkbox" id="recurringCheckbox"> Jaarlijks terugkerend (bijvoorbeeld een verjaardag)
     </label><br><br>
     <button id="saveEventButton">Opslaan</button>
     <button id="closeModalButton">Sluiten</button>
-</div>
-<div id="eventDetailsModal" class="modal">
+  </div>
+  <div id="eventDetailsModal" class="modal">
     <div id="eventDetailsContent"></div>
-</div>
+  </div>
 </body>
+
 </html>
